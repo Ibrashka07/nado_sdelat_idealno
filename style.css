@@ -33,4 +33,44 @@ html {
   max-width: 720px;
   text-align: center;
   margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.page::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgb(255 255 255/0.3);
+}
+
+.page_title::after {
+  content: '*';
+  position: relative;/*понадобится позднее для z-index*/
+}
+
+.page_title:hover {
+  color: #4c4c4c;
+  cursor: default;
+}
+
+.page_title:hover::before {
+  content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться. ';
+  color: black;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 1;
+  letter-spacing: normal;
+  background-color: white;
+  text-transform: initial;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 36px 44px;
+  max-width: 760px;
+  box-shadow: 0 12px 0 #000;
+  white-space: pre;
+  position: absolute;
+  top: 130px;
+  right: 20px;
+  text-align: left;
 }
